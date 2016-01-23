@@ -3,3 +3,9 @@
 /deps
 erl_crash.dump
 *.ez
+
+/.bundle/
+/.byebug_history
+/Gemfile
+/Gemfile.lock
+/vendor/

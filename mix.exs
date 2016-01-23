@@ -1,13 +1,22 @@
 defmodule Exromaji.Mixfile do
   use Mix.Project
 
+  @description """
+  A Elixir library for converting between hiragana, katakana, and romaji.
+  """
+
   def project do
-    [app: :exromaji,
-     version: "0.2.0",
-     elixir: "~> 1.2",
-     build_embedded: Mix.env == :prod,
-     start_permanent: Mix.env == :prod,
-     deps: deps]
+    [ app: :exromaji,
+      name: "Exromaji",
+      version: "0.2.0",
+      elixir: "~> 1.2",
+      description: @description,
+      build_embedded: Mix.env == :prod,
+      start_permanent: Mix.env == :prod,
+      package: package,
+      deps: deps,
+      source_url: "https://github.com/ikeikeikeike/exfavicon" 
+    ]
   end
 
   # Configuration for the OTP application
@@ -28,5 +37,11 @@ defmodule Exromaji.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     []
+  end
+
+  defp package do
+    [ maintainers: ["Tatsuo Ikeda / ikeikeikeike"],
+      licenses: ["MIT"],
+      links: %{"Github" => "https://github.com/ikeikeikeike/exromaji"} ]
   end
 end

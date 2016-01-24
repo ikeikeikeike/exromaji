@@ -94,7 +94,7 @@ defmodule Exromaji.Translator do
   def hira2kata(text) when is_binary(text), do: hira2kata(to_char_list(text))
   def hira2kata(text) when is_atom(text), do: hira2kata(to_char_list(text))
   def hira2kata(text) when is_list(text) do
-    :os.cmd(:string.join(['echo ', prepare_cmd(text), ' | nkf --katakana -Ww'], ''))
+    :os.cmd(:string.join(['echo ', prepare(text), ' | nkf --katakana -Ww'], ''))
       |> parse_stdout
   end
   def hira2kata(_), do: nil
@@ -103,7 +103,7 @@ defmodule Exromaji.Translator do
   def kata2hira(text) when is_binary(text), do: kata2hira(to_char_list(text))
   def kata2hira(text) when is_atom(text), do: kata2hira(to_char_list(text))
   def kata2hira(text) when is_list(text) do
-    :os.cmd(:string.join(['echo ', prepare_cmd(text), ' | nkf --hiragana -Ww'], ''))
+    :os.cmd(:string.join(['echo ', prepare(text), ' | nkf --hiragana -Ww'], ''))
       |> parse_stdout
   end
   def kata2hira(_), do: nil
@@ -112,7 +112,7 @@ defmodule Exromaji.Translator do
   def normalize(text) when is_binary(text), do: normalize(to_char_list(text))
   def normalize(text) when is_atom(text), do: normalize(to_char_list(text))
   def normalize(text) when is_list(text) do
-    :os.cmd(:string.join(['echo ', prepare_cmd(text), ' | nkf -mZ0Wwh0'], ''))
+    :os.cmd(:string.join(['echo ', prepare(text), ' | nkf -mZ0Wwh0'], ''))
       |> parse_stdout
       |> String.downcase
   end
@@ -125,7 +125,7 @@ defmodule Exromaji.Translator do
       |> List.first
   end
 
-  defp prepare_cmd(text) do
+  defp prepare(text) do
     text
     |> to_string
     |> String.codepoints

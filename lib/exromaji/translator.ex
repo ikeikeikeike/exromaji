@@ -7,7 +7,7 @@ defmodule Exromaji.Translator do
   def katakana(text) do
     text
     |> normalize
-    |> hira2kata 
+    |> hira2kata
     |> String.codepoints
     |> detect_romaji
   end
@@ -16,7 +16,7 @@ defmodule Exromaji.Translator do
   def hiragana(text) do
     text
     |> normalize
-    |> hira2kata 
+    |> hira2kata
     |> String.codepoints
     |> detect_romaji
     |> kata2hira
@@ -34,7 +34,7 @@ defmodule Exromaji.Translator do
   defp detect_katakana(list, kana \\ "")
   defp detect_katakana([], kana), do: kana
   defp detect_katakana([head|tail], kana) do
-    chars = Table.kana2romaji[List.first(tail)] 
+    chars = Table.kana2romaji[List.first(tail)]
     case head do
       "ン" ->
         cond do
@@ -66,8 +66,8 @@ defmodule Exromaji.Translator do
       head == "m" && Enum.member?(["p", "b", "m"], List.first(tail)) ->
         detect_romaji(tail, kana <> "ン")
       # ッ
-      (  
-        head == List.first(tail) && Regex.match?(~r/[a-z]/, head) && 
+      (
+        head == List.first(tail) && Regex.match?(~r/[a-z]/, head) &&
        !Enum.member?(["a", "i", "u", "e", "o", "n"], head)
       ) ->
         detect_romaji(tail, kana <> "ッ")
@@ -89,7 +89,7 @@ defmodule Exromaji.Translator do
         {Enum.slice(list, num, length(list)), letter}
     end
   end
- 
+
   @doc false
   def hira2kata(text) when is_binary(text), do: hira2kata(to_char_list(text))
   def hira2kata(text) when is_atom(text), do: hira2kata(to_char_list(text))
@@ -117,7 +117,7 @@ defmodule Exromaji.Translator do
       |> String.downcase
   end
   def normalize(_), do: nil
-  
+
   defp parse_stdout(outstring) do
     outstring
       |> to_string
@@ -131,7 +131,7 @@ defmodule Exromaji.Translator do
     |> String.codepoints
     |> Enum.map(fn(p) ->
       if Enum.member?(["'", "\""], p), do: ~s(\\#{p}), else: p
-    end) 
+    end)
     |> Enum.join
     |> to_char_list
   end

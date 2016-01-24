@@ -8,14 +8,14 @@ defmodule Exromaji.Mixfile do
   def project do
     [ app: :exromaji,
       name: "Exromaji",
-      version: "0.2.5",
+      version: "0.2.7",
       elixir: "~> 1.2",
       description: @description,
       build_embedded: Mix.env == :prod,
       start_permanent: Mix.env == :prod,
       package: package,
       deps: deps,
-      source_url: "https://github.com/ikeikeikeike/exromaji" 
+      source_url: "https://github.com/ikeikeikeike/exromaji"
     ]
   end
 

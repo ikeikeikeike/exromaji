@@ -3,9 +3,11 @@
 [![Build Status](http://img.shields.io/travis/ikeikeikeike/exromaji.svg?style=flat-square)](http://travis-ci.org/ikeikeikeike/exromaji)
 [![Hex version](https://img.shields.io/hexpm/v/exromaji.svg "Hex version")](https://hex.pm/packages/exromaji)
 [![Hex downloads](https://img.shields.io/hexpm/dt/exromaji.svg "Hex downloads")](https://hex.pm/packages/exromaji)
+[![Inline docs](https://inch-ci.org/github/ikeikeikeike/exromaji.svg)](http://inch-ci.org/github/ikeikeikeike/exromaji)
 [![hex.pm](https://img.shields.io/hexpm/l/ltsv.svg)](https://github.com/ikeikeikeike/exromaji/blob/master/LICENSE)
 
 A Elixir library for converting between hiragana, katakana, and romaji.
+
 
 ## Installation
 
@@ -63,7 +65,7 @@ iex(6)> Exromaji.romaji "ローマジ ろーまじ"
 ```
 
 
-<!-- 
+<!--
 
 Those provided functions cannot detect Kanji(漢字) nowadays like this.
 

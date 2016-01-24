@@ -8,14 +8,13 @@ defmodule Exromaji.Mixfile do
   def project do
     [ app: :exromaji,
       name: "Exromaji",
-      version: "0.2.7",
-      elixir: "~> 1.2",
+      version: "0.2.8",
+      elixir: ">= 1.0.0",
+      source_url: "https://github.com/ikeikeikeike/exromaji",
+      docs: [extras: ["README.md"]],
       description: @description,
-      build_embedded: Mix.env == :prod,
-      start_permanent: Mix.env == :prod,
       package: package,
       deps: deps,
-      source_url: "https://github.com/ikeikeikeike/exromaji"
     ]
   end
 
@@ -23,7 +22,7 @@ defmodule Exromaji.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger]]
+    [applications: []]
   end
 
   # Dependencies can be Hex packages:
@@ -39,13 +38,14 @@ defmodule Exromaji.Mixfile do
     [
       {:earmark, "~> 0.2", only: :dev},
       {:ex_doc, "~> 0.11", only: :dev},
+      {:inch_ex, only: :docs},
     ]
   end
 
   defp package do
     [ maintainers: ["Tatsuo Ikeda / ikeikeikeike"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/ikeikeikeike/exromaji"}
+      links: %{"GitHub" => "https://github.com/ikeikeikeike/exromaji"},
     ]
   end
 end

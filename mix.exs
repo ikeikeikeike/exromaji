@@ -15,7 +15,7 @@ defmodule Exromaji.Mixfile do
       start_permanent: Mix.env == :prod,
       package: package,
       deps: deps,
-      source_url: "https://github.com/ikeikeikeike/exfavicon" 
+      source_url: "https://github.com/ikeikeikeike/exromaji" 
     ]
   end
 
@@ -37,7 +37,7 @@ defmodule Exromaji.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:earmark, "~> 0.1", only: :dev},
+      {:earmark, "~> 0.2", only: :dev},
       {:ex_doc, "~> 0.11", only: :dev},
     ]
   end
@@ -45,6 +45,7 @@ defmodule Exromaji.Mixfile do
   defp package do
     [ maintainers: ["Tatsuo Ikeda / ikeikeikeike"],
       licenses: ["MIT"],
-      links: %{"Github" => "https://github.com/ikeikeikeike/exromaji"} ]
+      links: %{"GitHub" => "https://github.com/ikeikeikeike/exromaji"}
+    ]
   end
 end

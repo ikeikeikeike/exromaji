@@ -3,6 +3,7 @@
 [![Build Status](http://img.shields.io/travis/ikeikeikeike/exromaji.svg?style=flat-square)](http://travis-ci.org/ikeikeikeike/exromaji)
 [![Hex version](https://img.shields.io/hexpm/v/exromaji.svg "Hex version")](https://hex.pm/packages/exromaji)
 [![Hex downloads](https://img.shields.io/hexpm/dt/exromaji.svg "Hex downloads")](https://hex.pm/packages/exromaji)
+[![hex.pm](https://img.shields.io/hexpm/l/ltsv.svg)](https://github.com/ikeikeikeike/exromaji/blob/master/LICENSE)
 
 A Elixir library for converting between hiragana, katakana, and romaji.
 

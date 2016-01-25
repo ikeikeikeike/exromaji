@@ -6,7 +6,7 @@
 [![Inline docs](https://inch-ci.org/github/ikeikeikeike/exromaji.svg)](http://inch-ci.org/github/ikeikeikeike/exromaji)
 [![hex.pm](https://img.shields.io/hexpm/l/ltsv.svg)](https://github.com/ikeikeikeike/exromaji/blob/master/LICENSE)
 
-A Elixir library for converting between hiragana, katakana, and romaji.
+A Elixir library for translating between hiragana, katakana, and romaji.
 
 
 ## Installation
@@ -21,15 +21,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   end
   ```
 
-  2. Ensure exromaji is started before your application:
-
-  ```elixir
-  def application do
-    [applications: [:exromaji]]
-  end
-  ```
-
-  3. Exromaji package needs `nkf` command and it needs to install that in your environment when you don't have `nkf`.
+  2. Exromaji package needs `nkf` command and it needs to install that in your environment when you don't have `nkf`.
 
   ```zsh
   $ brew install nkf

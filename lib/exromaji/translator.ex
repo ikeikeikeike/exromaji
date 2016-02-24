@@ -130,7 +130,7 @@ defmodule Exromaji.Translator do
     |> to_string
     |> String.codepoints
     |> Enum.map(fn(p) ->
-      if Enum.member?(["'", "\""], p), do: ~s(\\#{p}), else: p
+      if Enum.member?(["'", "\"", "&", ";", "|", "<", ">", "(", ")", "`"], p), do: ~s(\\#{p}), else: p
     end)
     |> Enum.join
     |> to_char_list

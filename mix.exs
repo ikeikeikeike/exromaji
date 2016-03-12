@@ -2,7 +2,7 @@ defmodule Exromaji.Mixfile do
   use Mix.Project
 
   @description """
-  A Elixir library for converting between hiragana, katakana, and romaji.
+  A Elixir library for translating between hiragana, katakana, and romaji.
   """
 
   def project do

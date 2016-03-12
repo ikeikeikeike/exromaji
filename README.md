@@ -6,7 +6,7 @@
 [![Inline docs](https://inch-ci.org/github/ikeikeikeike/exromaji.svg)](http://inch-ci.org/github/ikeikeikeike/exromaji)
 [![hex.pm](https://img.shields.io/hexpm/l/ltsv.svg)](https://github.com/ikeikeikeike/exromaji/blob/master/LICENSE)
 
-A Elixir library for converting between hiragana, katakana, and romaji.
+A Elixir library for translating between hiragana, katakana, and romaji.
 
 
 ## Installation
@@ -56,19 +56,20 @@ iex(6)> Exromaji.romaji "ローマジ ろーまじ"
 "ro-maji ro-maji"
 ```
 
-
-<!--
-
-Those provided functions cannot detect Kanji(漢字) nowadays like this.
+Those provided functions cannot detect Kanji(漢字) in development, like this.
 
 ```Elixir
-iex(7)> Exromaji.hiragana "ローマ字"
-"ろーま字"
+iex(7)> Exromaji.romaji "ローマ字"
+"ro-ma字"
 ```
 
-Although Kanji package can detect Kanji(漢字).
+Although [exkanji package](https://github.com/ikeikeikeike/exkanji) are detecting Kanji(漢字). It also inspires a imitational interfaces from exromaji.
+I suppose that you'll install [exkanji package](https://github.com/ikeikeikeike/exkanji) in your development as required.
 
--->
+```Elixir
+iex(8)> Exkanji.romaji "ローマ字"
+"ro-maji"
+```
 
 
 [API Reference](http://hexdocs.pm/exromaji/api-reference.html).
@@ -76,6 +77,6 @@ Although Kanji package can detect Kanji(漢字).
 
 ## Inspiration
 
-- https://github.com/ikayzo/mojinizer
-- https://github.com/makimoto/romaji
-- https://github.com/gojp/kana
+- [mojinizer](https://github.com/ikayzo/mojinizer)
+- [romaji](https://github.com/makimoto/romaji)
+- [kana](https://github.com/gojp/kana)

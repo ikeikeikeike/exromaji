@@ -21,15 +21,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
   end
   ```
 
-  2. Ensure exromaji is started before your application:
-
-  ```elixir
-  def application do
-    [applications: [:exromaji]]
-  end
-  ```
-
-  3. Exromaji package needs `nkf` command and it needs to install that in your environment when you don't have `nkf`.
+  2. Exromaji package needs `nkf` command and it needs to install that in your environment when you don't have `nkf`.
 
   ```zsh
   $ brew install nkf

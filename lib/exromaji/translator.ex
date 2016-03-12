@@ -38,14 +38,14 @@ defmodule Exromaji.Translator do
     case head do
       "ン" ->
         cond do
-          chars         && Enum.member?(["p", "b", "m"], Enum.slice(chars[0], 0, 1)) ->
+          chars         && Enum.slice(chars[0], 0, 1) in ["p", "b", "m"] ->
             detect_katakana(tail, kana <> "m")
           true ->
             detect_katakana(tail, kana <> "n")
         end
       "ッ" ->
         cond do
-          is_nil(chars) || Enum.member?(["a", "i", "u", "e", "o", "n", nil], List.first(tail)) ->
+          is_nil(chars) || List.first(tail) in ["a", "i", "u", "e", "o", "n", nil] ->
             detect_katakana(tail, kana <> "xtsu")
           true ->
             detect_katakana(tail, kana <> Enum.slice(chars[0], 0, 1))
@@ -130,7 +130,7 @@ defmodule Exromaji.Translator do
     |> to_string
     |> String.codepoints
     |> Enum.map(fn(p) ->
-      if Enum.member?(["'", "\""], p), do: ~s(\\#{p}), else: p
+      if p in ["'", "\""], do: ~s(\\#{p}), else: p
     end)
     |> Enum.join
     |> to_char_list

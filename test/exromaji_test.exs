@@ -54,6 +54,17 @@ defmodule ExromajiTest do
     assert Exromaji.romaji("ヒラ'ガナ") == "hira'gana"
   end
 
+  test "Romaji includes same double letters" do
+    assert Exromaji.romaji("コック") == "kokku"
+  end
+
+  test "Romaji includes same double letters 2" do
+    assert Exromaji.romaji("かったるい") == "kattarui"
+  end
+
+  test "Romaji includes same double letters 3" do
+    assert Exromaji.romaji("ハンコック") == "hankokku"
+  end
 
   test "Sound 1" do
     assert Exromaji.sound("ギャオス") == "か"

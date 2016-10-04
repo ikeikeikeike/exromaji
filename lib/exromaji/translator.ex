@@ -31,6 +31,17 @@ defmodule Exromaji.Translator do
     |> detect_katakana
   end
 
+  @doc false
+  def sound(text) do
+    letter =
+      text
+      |> katakana
+      |> String.codepoints
+      |> List.first
+
+    Table.kana2sound[letter]
+  end
+
   defp detect_katakana(list, kana \\ "")
   defp detect_katakana([], kana), do: kana
   defp detect_katakana([head|tail], kana) do

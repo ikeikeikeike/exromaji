@@ -23,6 +23,11 @@ defmodule Exromaji do
   defdelegate hira(text), to: Exromaji.Translator, as: :hiragana
 
   @doc """
+  Exromaji.sound returns japanese sound letter that like vowels and consonants after translate working.
+  """
+  defdelegate sound(text), to: Exromaji.Translator, as: :sound
+
+  @doc """
   Hiragana are translated into katakana by Exromaji.hirakata.
   """
   defdelegate hira2kata(text), to: Exromaji.Translator, as: :hira2kata

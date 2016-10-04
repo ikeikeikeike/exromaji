@@ -8,7 +8,7 @@ defmodule Exromaji.Mixfile do
   def project do
     [ app: :exromaji,
       name: "Exromaji",
-      version: "0.4.1",
+      version: "0.4.2",
       elixir: ">= 1.0.0",
       source_url: "https://github.com/ikeikeikeike/exromaji",
       docs: [extras: ["README.md"]],

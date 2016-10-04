@@ -49,7 +49,7 @@ defmodule Exromaji.Translator do
     case head do
       "ン" ->
         cond do
-          chars         && Enum.slice(chars[0], 0, 1) in ["p", "b", "m"] ->
+          chars && Enum.slice(String.codepoints(List.first(chars)), 0, 1) in ["p", "b", "m"] ->
             detect_katakana(tail, kana <> "m")
           true ->
             detect_katakana(tail, kana <> "n")
@@ -59,7 +59,7 @@ defmodule Exromaji.Translator do
           is_nil(chars) || List.first(tail) in ["a", "i", "u", "e", "o", "n", nil] ->
             detect_katakana(tail, kana <> "xtsu")
           true ->
-            detect_katakana(tail, kana <> Enum.slice(chars[0], 0, 1))
+            detect_katakana(tail, kana <> Enum.slice(String.codepoints(List.first(chars)), 0, 1))
         end
       _ ->
         case pos_loop(Table.kana2romaji, [head] ++ tail) do

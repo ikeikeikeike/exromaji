@@ -38,13 +38,17 @@ defmodule ExromajiTest do
     assert Exromaji.romaji("ヒラガナ") == "hiragana"
   end
 
-  test "Romaji incldues nn letter" do
+  test "Romaji incldues nn letter 1" do
     assert Exromaji.romaji("ヒラガナ!ン!!") == "hiragana!n!!"
   end
 
-  # test "Romaji incldues xtu letters" do
-    # assert Exromaji.romaji("ヒラガナ!ッン!!") == "hiragana!xtunn!!"
-  # end
+  test "Romaji incldues nn letter 2" do
+    assert Exromaji.romaji("シーランド") == "shi-rando"
+  end
+
+  test "Romaji incldues xtu letters" do
+    assert Exromaji.romaji("ヒラガナ!ッン!!") == "hiragana!xtsun!!"
+  end
 
   test "Romaji includes quote" do
     assert Exromaji.romaji("ヒラ'ガナ") == "hira'gana"
@@ -70,6 +74,5 @@ defmodule ExromajiTest do
   test "Sound 5" do
     assert Exromaji.sound("愛のり") == nil
   end
-
 
 end

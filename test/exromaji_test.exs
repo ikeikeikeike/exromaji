@@ -50,4 +50,26 @@ defmodule ExromajiTest do
     assert Exromaji.romaji("ヒラ'ガナ") == "hira'gana"
   end
 
+
+  test "Sound 1" do
+    assert Exromaji.sound("ギャオス") == "か"
+  end
+
+  test "Sound 2" do
+    assert Exromaji.sound("IYカード") == "あ"
+  end
+
+  test "Sound 3" do
+    assert Exromaji.sound("Japan") == "さ"
+  end
+
+  test "Sound 4" do
+    assert Exromaji.sound("ねんとう") == "な"
+  end
+
+  test "Sound 5" do
+    assert Exromaji.sound("愛のり") == nil
+  end
+
+
 end

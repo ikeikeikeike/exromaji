@@ -6,7 +6,7 @@
 [![Inline docs](https://inch-ci.org/github/ikeikeikeike/exromaji.svg)](http://inch-ci.org/github/ikeikeikeike/exromaji)
 [![hex.pm](https://img.shields.io/hexpm/l/ltsv.svg)](https://github.com/ikeikeikeike/exromaji/blob/master/LICENSE)
 
-A Elixir library for translating between hiragana, katakana, and romaji.
+A Elixir library for translating between hiragana, katakana, romaji and sound.
 
 
 ## Installation
@@ -30,7 +30,7 @@ If [available in Hex](https://hex.pm/docs/publish), the package can be installed
 ## Usage
 
 Exromaji provides some convinient functions in Exromaji module through Exromaji.Translator and Exromaji.Table.
-Those provided functions are able to translate into hiragana(ひらがな), katakana(カタカナ) and Romaji(ローマ字).
+Those provided functions are able to translate into hiragana(ひらがな), katakana(カタカナ), romaji(ローマ字) and sound(五十音).
 
 Into hiragana(ひらがな)
 ```Elixir
@@ -48,7 +48,7 @@ iex(4)> Exromaji.katakana "かたかな katakana"
 "カタカナ カタカナ"
 ```
 
-Into Romaji(ローマ字)
+Into romaji(ローマ字)
 ```Elixir
 iex(5)> Exromaji.romaji "ａ a A ア ｱ ァ ｧ あ ぁ 亜"
 "a a a a a ァ ァ a ァ 亜"
@@ -56,21 +56,36 @@ iex(6)> Exromaji.romaji "ローマジ ろーまじ"
 "ro-maji ro-maji"
 ```
 
-Those provided functions cannot detect Kanji(漢字) in development, like this.
+Into sound(五十音)
+```Elixir
+iex(7)> Exromaji.sound "よろしく"
+"や"
+```
+
+Those provided functions cannot detect Kanji(漢字) in translation working, like this.
 
 ```Elixir
-iex(7)> Exromaji.romaji "ローマ字"
+iex(9)> Exromaji.romaji "ローマ字"
 "ro-ma字"
 ```
 
-Although [exkanji package](https://github.com/ikeikeikeike/exkanji) are detecting Kanji(漢字). It also inspires a imitational interfaces from exromaji.
+```Elixir
+iex(10)> Exromaji.sound "夜露死苦"
+nil
+```
+
+However [exkanji package](https://github.com/ikeikeikeike/exkanji) are detecting Kanji(漢字). It also inspires a imitational interfaces from exromaji.
 I suppose that you'll install [exkanji package](https://github.com/ikeikeikeike/exkanji) in your development as required.
 
 ```Elixir
-iex(8)> Exkanji.romaji "ローマ字"
+iex(11)> Exkanji.romaji "ローマ字"
 "ro-maji"
 ```
 
+```Elixir
+iex(12)> Exkanji.sound "夜露死苦"
+"や"
+```
 
 [API Reference](http://hexdocs.pm/exromaji/api-reference.html).
 

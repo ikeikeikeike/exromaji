@@ -2,13 +2,13 @@ defmodule Exromaji.Mixfile do
   use Mix.Project
 
   @description """
-  A Elixir library for translating between hiragana, katakana, and romaji.
+  A Elixir library for translating between hiragana, katakana, romaji and sound.
   """
 
   def project do
     [ app: :exromaji,
       name: "Exromaji",
-      version: "0.4.2",
+      version: "0.4.3",
       elixir: ">= 1.0.0",
       source_url: "https://github.com/ikeikeikeike/exromaji",
       docs: [extras: ["README.md"]],

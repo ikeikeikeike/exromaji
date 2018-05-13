@@ -8,6 +8,7 @@ defmodule Exromaji do
   Exromaji.katakana returns katakana text after translate working.
   """
   defdelegate katakana(text), to: Exromaji.Translator, as: :katakana
+
   @doc """
   Alias Exromaji.katakana
   """
@@ -17,6 +18,7 @@ defmodule Exromaji do
   Exromaji.hiragana returns hiragana text after translate working.
   """
   defdelegate hiragana(text), to: Exromaji.Translator, as: :hiragana
+
   @doc """
   Alias hiragana
   """
@@ -31,6 +33,7 @@ defmodule Exromaji do
   Hiragana are translated into katakana by Exromaji.hirakata.
   """
   defdelegate hira2kata(text), to: Exromaji.Translator, as: :hira2kata
+
   @doc """
   Katakana are translated into hiragana by Exromaji.kata2hira.
   """

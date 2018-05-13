@@ -6,15 +6,16 @@ defmodule Exromaji.Mixfile do
   """
 
   def project do
-    [ app: :exromaji,
+    [
+      app: :exromaji,
       name: "Exromaji",
-      version: "0.4.3",
+      version: "1.0.0",
       elixir: ">= 1.0.0",
       source_url: "https://github.com/ikeikeikeike/exromaji",
       docs: [extras: ["README.md"]],
       description: @description,
-      package: package,
-      deps: deps,
+      package: package(),
+      deps: deps()
     ]
   end
 
@@ -36,16 +37,17 @@ defmodule Exromaji.Mixfile do
   # Type "mix help deps" for more examples and options
   defp deps do
     [
-      {:earmark, "~> 0.2", only: :dev},
-      {:ex_doc, "~> 0.11", only: :dev},
-      {:inch_ex, only: :docs},
+      {:earmark, ">= 0.0.0", only: :dev},
+      {:ex_doc, ">= 0.0.0", only: :dev},
+      {:inch_ex, only: :docs}
     ]
   end
 
   defp package do
-    [ maintainers: ["Tatsuo Ikeda / ikeikeikeike"],
+    [
+      maintainers: ["Tatsuo Ikeda / ikeikeikeike"],
       licenses: ["MIT"],
-      links: %{"GitHub" => "https://github.com/ikeikeikeike/exromaji"},
+      links: %{"GitHub" => "https://github.com/ikeikeikeike/exromaji"}
     ]
   end
 end

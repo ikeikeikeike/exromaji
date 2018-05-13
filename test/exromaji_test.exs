@@ -11,7 +11,7 @@ defmodule ExromajiTest do
   end
 
   # test "Hiragana incldues xtu letters" do
-    # assert Exromaji.hiragana("hiragana!xtunn!!") == "ひらがな!っん!!"
+  # assert Exromaji.hiragana("hiragana!xtunn!!") == "ひらがな!っん!!"
   # end
 
   test "Hiragana includes quote" do
@@ -27,7 +27,7 @@ defmodule ExromajiTest do
   end
 
   # test "Katakana incldues xtu letters" do
-    # assert Exromaji.katakana("hiragana!xtunn!!") == "ヒラガナ!ッン!!"
+  # assert Exromaji.katakana("hiragana!xtunn!!") == "ヒラガナ!ッン!!"
   # end
 
   test "Katakana includes quote" do
@@ -85,5 +85,4 @@ defmodule ExromajiTest do
   test "Sound 5" do
     assert Exromaji.sound("愛のり") == nil
   end
-
 end
